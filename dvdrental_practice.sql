@@ -10,3 +10,5 @@ LIMIT 10;
 
 SELECT COUNT(*)
 FROM customer;
+
+select last_name FROM actor;
