@@ -132,3 +132,17 @@ group by customer_id, staff_id
 HAVING sum(amount) >= 100;
 
 
+SELECT customer_id, sum(amount) from payment
+WHERE staff_id = 2
+group by customer_id
+HAVING sum(amount) >= 110;
+
+SELECT COUNT(*) FROM film
+WHERE title LIKE 'J%';
+
+SELECT customer_id  FROM customer
+WHERE first_name LIKE 'E%' AND address_id < 500
+ORDER BY customer_id DESC
+LIMIT 1;
+
+
