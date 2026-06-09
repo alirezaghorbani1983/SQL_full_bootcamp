@@ -161,7 +161,42 @@ where first_name LIKE '_her%';
 select * from customer
 where first_name NOT LIKE '_her%';
 
+select * from customer
+where first_name LIKE 'A%'
+ORDER BY last_name;
 
 
+select * from customer
+where first_name LIKE 'A%' AND last_name NOT LIKE 'B%'
+ORDER BY last_name;
 
+select * from payment;
+
+select COUNT(*) from payment
+WHERE amount > 5;
+
+SELECT count(*) FROM actor
+WHERE first_name LIKE 'P%';
+
+select * from address;
+
+select count(DISTINCT(district)) from address;
+
+select count(DISTINCT(district)) from address;
+
+select DISTINCT(district) from address;
+
+select count(*) from film
+where rating ='R' AND replacement_cost BETWEEN 5 and 15;
+
+select * from film
+WHERE title LIKE '%Truman%';
+
+select COUNT(* from film
+WHERE title LIKE '%Truman%';
+
+-- group by
+-- aggregate function
+
+select title from film
 
