@@ -97,6 +97,38 @@ GROUP BY customer_id
 order by sum(amount) DESC
 LIMIT 5;
 
+SELECT * from payment;
 
+SELECT customer_id, sum(amount) FROM payment
+GROUP BY customer_id;
+
+SELECT customer_id, sum(amount) FROM payment
+WHERE customer_id NOT IN (184, 87, 77.80)
+GROUP BY customer_id;
+
+SELECT customer_id, sum(amount) FROM payment
+GROUP BY customer_id
+HAVING sum(amount) > 140;
+
+select * from customer;
+
+select store_id, COUNT(*) from customer
+GROUP BY store_id
+HAVING COUNT(*) > 300;
+
+
+select store_id, COUNT(customer_id) from customer
+GROUP BY store_id
+HAVING COUNT(customer_id) > 300;
+
+
+SELECT customer_id, COUNT(amount) from payment
+group by customer_id
+HAVING COUNT(amount) >= 40;
+
+SELECT customer_id, staff_id, sum(amount) from payment
+WHERE staff_id = 2
+group by customer_id, staff_id
+HAVING sum(amount) >= 100;
 
 
