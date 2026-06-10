@@ -145,4 +145,33 @@ WHERE first_name LIKE 'E%' AND address_id < 500
 ORDER BY customer_id DESC
 LIMIT 1;
 
+-- JOIN
+-- AS alias
+
+SELECT customer_id FROM payment;
+
+SELECT amount AS rental_price FROM payment;
+
+SELECT SUM(amount) AS net_revenue FROM payment;
+
+SELECT count(amount) FROM payment;
+
+SELECT count(amount) AS num_transactions FROM payment;
+
+SELECT customer_id, sum(amount) 
+FROM payment
+GROUP BY customer_id;
+
+SELECT customer_id, sum(amount) AS total_spent
+FROM payment
+GROUP BY customer_id;
+
+SELECT customer_id, sum(amount) AS total_spent
+FROM payment
+GROUP BY customer_id
+HAVING sum(amount) > 100;
+
+SELECT customer_id, amount AS new_name
+FROM payment
+where amount > 5;
 
