@@ -203,5 +203,27 @@ select * FROM customer
 FULL OUTER JOIN payment
 ON customer.customer_id = payment.customer_id;
 
+-- FULL OUTER JOIN with where 
 
+select * FROM customer
+FULL OUTER JOIN payment
+ON customer.customer_id = payment.customer_id
+WHERE customer.customer_id IS NULL OR 
+payment.payment_id IS NULL;
 
+select COUNT(DISTINCT(customer_id)) from payment;
+
+select COUNT(DISTINCT(customer_id)) from customer;
+
+SELECT * FROM film;
+
+SELECT * FROM inventory;
+
+SELECT film.film_id, title, inventory_id FROM film
+LEFT JOIN inventory
+ON inventory.film_id = film.film_id;
+ 
+
+SELECT film.film_id, title, inventory_id, store_id FROM film
+LEFT JOIN inventory
+ON inventory.film_id = film.film_id;
