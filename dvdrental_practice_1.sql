@@ -175,3 +175,33 @@ SELECT customer_id, amount AS new_name
 FROM payment
 where amount > 5;
 
+select * FROM payment;
+
+select * FROM payment
+INNER JOIN customer
+ON payment.customer_id = customer.customer_id;
+
+
+select payment_id FROM payment
+INNER JOIN customer
+ON payment.customer_id = customer.customer_id;
+
+select payment_id, payment.customer_id, first_name FROM payment
+INNER JOIN customer
+ON payment.customer_id = customer.customer_id;
+
+SELECT * FROM customer;
+
+select COUNT(*)
+FROM payment
+INNER JOIN customer
+ON payment.customer_id = customer.customer_id;
+
+-- FULL OUTER JOIN
+
+select * FROM customer
+FULL OUTER JOIN payment
+ON customer.customer_id = payment.customer_id;
+
+
+
