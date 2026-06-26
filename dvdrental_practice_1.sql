@@ -238,5 +238,22 @@ LEFT JOIN inventory
 ON inventory.film_id = film.film_id
 WHERE inventory.film_id IS NULL;
 
+SELECT * from address;
 
-SELECT * FROM customer;
+
+SELECT district, email FROM customer
+INNER JOIN address
+ON customer.address_id = address.address_id
+where district = 'California';
+
+
+
+select title, first_name, last_name from actor
+inner JOIN film_actor
+ON actor.actor_id = film_actor.actor_id
+INNER JOIN film
+ON film_actor.film_id = film.film_id;
+
+
+
+
