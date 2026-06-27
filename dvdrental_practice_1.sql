@@ -240,12 +240,19 @@ WHERE inventory.film_id IS NULL;
 
 SELECT * from address;
 
+SELECT * FROM customer
+INNER JOIN address
+ON customer.address_id = address.address_id;
 
 SELECT district, email FROM customer
 INNER JOIN address
 ON customer.address_id = address.address_id
 where district = 'California';
 
+
+select * from actor
+inner JOIN film_actor
+ON actor.actor_id = film_actor.actor_id;
 
 
 select title, first_name, last_name from actor
@@ -255,5 +262,16 @@ INNER JOIN film
 ON film_actor.film_id = film.film_id;
 
 
+SHOW ALL
+
+show TIMEZONE;
+
+SELECT NOW();
 
 
+SELECT TIMEOFDAY();
+
+SELECT CURRENT_TIME;
+
+
+SELECT CURRENT_DATE;
