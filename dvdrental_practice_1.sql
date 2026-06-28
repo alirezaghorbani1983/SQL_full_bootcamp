@@ -275,3 +275,56 @@ SELECT CURRENT_TIME;
 
 
 SELECT CURRENT_DATE;
+
+SELECT EXTRACT(YEAR FROM payment_date) 
+FROM payment;
+
+SELECT EXTRACT(YEAR FROM payment_date) AS year
+FROM payment;
+
+SELECT EXTRACT(month FROM payment_date) AS pay_month
+FROM payment;
+
+SELECT EXTRACT(quarter FROM payment_date) AS QUARTER
+FROM payment;
+
+
+SELECT AGE(payment_date)
+FROM payment;
+
+
+SELECT TO_CHAR(CURRENT_DATE, 'DD-MM-YYYY');
+
+SELECT TO_CHAR(NOW(), 'Month DD, YYYY');
+
+SELECT TO_CHAR(NOW(), 'HH24:MI:SS');
+
+SELECT TO_CHAR(payment_date, 'MONTH-YYYY')
+FROM payment;
+
+SELECT TO_CHAR(payment_date, 'month-YY')
+FROM payment;
+
+SELECT TO_CHAR(payment_date, 'MONTH-YY')
+FROM payment;
+
+
+SELECT TO_CHAR(payment_date, 'MONTH   YYYY')
+FROM payment;
+
+SELECT TO_CHAR(payment_date, 'Mon/DD/YYYY')
+FROM payment;
+
+
+
+SELECT TO_CHAR(payment_date, 'MM/DD/YYYY')
+FROM payment;
+
+SELECT TO_CHAR(payment_date, 'MM-DD-YYYY')
+FROM payment;
+
+
+SELECT TO_CHAR(payment_date, 'DD-MM-YYYY')
+FROM payment;
+
+
