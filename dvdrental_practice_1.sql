@@ -327,4 +327,52 @@ FROM payment;
 SELECT TO_CHAR(payment_date, 'DD-MM-YYYY')
 FROM payment;
 
+SELECT * FROM payment;
+
+SELECT DISTINCT(TO_CHAR(payment_date, 'Month'))
+FROM payment;
+
+SELECT COUNT(*)
+FROM payment
+WHERE TO_CHAR(payment_date, 'FMDay') = 'Monday';
+
+
+SELECT COUNT(*)
+FROM payment
+WHERE EXTRACT(DOW FROM payment_date) = 1;
+
+
+select * FROM film;
+
+select rental_rate/replacement_cost FROM film;
+
+
+select ROUND(rental_rate/replacement_cost, 2) * 100 FROM film;
+
+
+select ROUND(rental_rate/replacement_cost, 4) * 100 FROM film;
+
+
+select ROUND(rental_rate/replacement_cost, 4) * 100 AS percent_cost
+FROM film;
+
+select 0.1 * replacement_cost AS Deposit
+FROM film;
+
+
+SELECT
+    title,
+    replacement_cost,
+    CEIL(replacement_cost) AS rounded_up
+FROM film;
+
+
+SELECT
+    title,
+    replacement_cost,
+    FLOOR(replacement_cost) AS rounded_down
+FROM film;
+
+
+
 
