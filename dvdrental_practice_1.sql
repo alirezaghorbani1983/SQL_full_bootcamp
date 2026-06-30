@@ -373,6 +373,82 @@ SELECT
     FLOOR(replacement_cost) AS rounded_down
 FROM film;
 
+select * FROM customer;
 
+select length(first_name)  FROM customer;
+
+
+select first_name || last_name  
+FROM customer;
+
+select first_name || ' ' || last_name  
+FROM customer;
+
+select first_name || ' ' || last_name  AS full_name 
+FROM customer;
+
+select upper(first_name) || ' ' || upper(last_name)  AS full_name 
+FROM customer;
+
+
+SELECT first_name || last_name || '@gmail.com'
+FROM customer;
+
+select LEFT('ABCDE', 2);
+
+SELECT LOWER(LEFT(first_name, 1)) || '.' || LOWER(last_name )|| '@gmail.com' AS full_name
+FROM customer;
+
+SELECT * FROM film;
+
+SELECT title, rental_rate
+FROM film
+WHERE rental_rate >
+(SELECT AVG(rental_rate) FROM film);
+
+
+SELECT * FROM rental;
+
+SELECT * FROM inventory;
+
+
+SELECT * FROM rental
+WHERE return_date BETWEEN '2005-05-29' AND '2005-05-30';
+
+SELECT inventory.film_id 
+FROM inventory
+INNER JOIN rental
+ON inventory.inventory_id = rental.inventory_id
+WHERE return_date BETWEEN '2005-05-29' AND '2005-05-30';
+
+
+SELECT film_id, title
+FROM film
+WHERE film_id IN 
+(SELECT inventory.film_id 
+FROM inventory
+INNER JOIN rental
+ON inventory.inventory_id = rental.inventory_id
+WHERE return_date BETWEEN '2005-05-29' AND '2005-05-30')
+ORDER BY title;
+
+SELECT * FROM payment;
+
+SELECT first_name, last_name
+from customer as c
+WHERE EXISTS
+(SELECT * FROM payment as p
+WHERE c.customer_id = p.customer_id
+AND amount > 11 );
+
+
+SELECT first_name, last_name
+from customer as c
+WHERE NOT EXISTS
+(SELECT * FROM payment as p
+WHERE c.customer_id = p.customer_id
+AND amount > 11 );
+
+SELECT * FROM film;
 
 
