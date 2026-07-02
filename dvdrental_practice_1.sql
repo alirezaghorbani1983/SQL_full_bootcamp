@@ -448,7 +448,7 @@ WHERE NOT EXISTS
 (SELECT * FROM payment as p
 WHERE c.customer_id = p.customer_id
 AND amount > 11 );
-
+gya
 SELECT * FROM film;
 
 SELECT title, length FROM film
